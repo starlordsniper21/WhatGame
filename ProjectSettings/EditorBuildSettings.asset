@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Main Menu UI/Main Menu.unity
+    guid: ab2b6d604df8d2f4085adb4629b10962
+  - enabled: 1
+    path: Assets/Level/Level 1.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Level/Level 2.unity
+    guid: d9e08e5575d03294a80cf21f02a56a44
+  - enabled: 1
+    path: Assets/Level/Level 3.unity
+    guid: fdc713982384ad345a5c2a4764739e85
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ee721d39d60b6c941ad3ec35e309ed49, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: d29443de278db6e4bb6ab35dbfb2d662, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: fb23b861e4d1c344f8a600bad9397cfa, type: 2}
