@@ -38,14 +38,16 @@ public class MeleeEnemy : MonoBehaviour
     {
         cooldownTimer += Time.deltaTime;
 
-
-        if (PlayerInSight())
+        if (PlayerInSight() && playerHealth != null)
         {
             if (cooldownTimer >= attackCooldown && playerHealth.currentHealth > 0)
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleeAttack");
-                SoundScript.instance.PlaySound(attacksound);
+                if (SoundScript.instance != null)
+                {
+                    SoundScript.instance.PlaySound(attacksound);
+                }
             }
         }
 
@@ -75,27 +77,51 @@ public class MeleeEnemy : MonoBehaviour
 
     private bool PlayerInSight()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 
-            0, Vector2.left,0, playerLayer);
+        Vector2 castDirection = spriteRenderer.flipX ? Vector2.left : Vector2.right;
 
-        if(hit.collider != null)
+        RaycastHit2D hit = Physics2D.BoxCast(
+            (Vector2)(boxCollider.bounds.center + (Vector3)(castDirection * range * transform.localScale.x * colliderDistance)), // Explicitly cast both to Vector2
+            new Vector2(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y), // Explicitly cast to Vector2
+            0, castDirection, 0, playerLayer);
+
+        if (hit.collider != null)
             playerHealth = hit.transform.GetComponent<Health>();
 
         return hit.collider != null;
     }
 
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-           new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+
+        Vector3 gizmoPosition = boxCollider.bounds.center;
+
+        // Check if playerHealth is not null before using it
+        if (playerHealth != null)
+        {
+            // Adjust the Gizmo's position based on the enemy's flip state
+            if (spriteRenderer.flipX)
+            {
+                gizmoPosition -= transform.right * range * transform.localScale.x * colliderDistance;
+            }
+            else
+            {
+                gizmoPosition += transform.right * range * transform.localScale.x * colliderDistance;
+            }
+
+            Gizmos.DrawWireCube(gizmoPosition,
+                new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+        }
     }
+
 
     private void DamagePlayer()
     {
-        if (PlayerInSight())
+        if (PlayerInSight() && playerHealth != null)
+        {
             playerHealth.TakeDamage(damage);
+        }
     }
-
 }
