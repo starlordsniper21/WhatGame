@@ -91,6 +91,15 @@ public class MeleeEnemy : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<Health>().TakeDamage(damage);
+        }
+    }
+
+
 
     private void OnDrawGizmos()
     {
@@ -98,10 +107,9 @@ public class MeleeEnemy : MonoBehaviour
 
         Vector3 gizmoPosition = boxCollider.bounds.center;
 
-        // Check if playerHealth is not null before using it
         if (playerHealth != null)
         {
-            // Adjust the Gizmo's position based on the enemy's flip state
+            
             if (spriteRenderer.flipX)
             {
                 gizmoPosition -= transform.right * range * transform.localScale.x * colliderDistance;
