@@ -87,16 +87,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded())
         {
-            
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             anim.SetTrigger("jump");
         }
-        else if(onWall() && !isGrounded())
+        else if (onWall() && !isGrounded())
         {
             wallJumpCooldown = 0;
-            rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+            rb.gravityScale = 3; // Restore gravity scale
+            rb.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * speed, jumpPower); // Adjust the direction based on facing
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
