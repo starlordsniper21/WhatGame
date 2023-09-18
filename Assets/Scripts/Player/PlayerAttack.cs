@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -21,7 +22,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0)! && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+
             Attack();
 
         cooldownTimer += Time.deltaTime;

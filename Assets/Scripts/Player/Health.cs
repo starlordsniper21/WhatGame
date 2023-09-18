@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField]private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
-    private Boolean dead;
+    private bool dead;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -19,6 +19,10 @@ public class Health : MonoBehaviour
     [Header("Death sound")]
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurtSound;
+
+    private const int PlayerLayer = 10;
+    private const int EnemyLayer = 11;
+    private const int FlashWaitFactor = 2;
 
 
     private GameOverManager gameOverManager;
@@ -77,13 +81,13 @@ public class Health : MonoBehaviour
 
     private IEnumerator Invunerability()
     {
-        Physics2D.IgnoreLayerCollision(10, 11, true);
+        Physics2D.IgnoreLayerCollision(PlayerLayer, EnemyLayer, true);
         for (int i = 0; i < numberOfFlashes; i++)
         {
             spriteRend.color = new Color(1, 0, 0, 0.5f);
-            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes *2));
+            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * FlashWaitFactor));
             spriteRend.color = Color.white;
-            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * FlashWaitFactor));
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }

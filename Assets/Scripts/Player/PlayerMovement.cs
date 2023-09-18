@@ -89,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             anim.SetTrigger("jump");
+            SoundScript.instance.PlaySound(jumpSound); // Play jump sound here
         }
         else if (onWall() && !isGrounded())
         {

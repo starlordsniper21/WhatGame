@@ -18,13 +18,26 @@ public class ArrowTap : MonoBehaviour
 
     private int FindArrow()
     {
+        
+        Vector3 firingDirection = firePoint.right;
+
         for (int i = 0; i < arrows.Length; i++)
         {
             if (!arrows[i].activeInHierarchy)
                 return i;
+
+            
+            Vector3 arrowDirection = (arrows[i].transform.position - firePoint.position).normalized;
+            float dotProduct = Vector3.Dot(arrowDirection, firingDirection);
+
+            
+            if (dotProduct >= 0.9f)
+                return i;
         }
-        return 0;
+
+        return 0; 
     }
+
 
     private void Update()
     {
