@@ -59,6 +59,7 @@ public class Health : MonoBehaviour
                     dead = true;
                     SoundScript.instance.PlaySound(deathSound);
                     gameOverManager.gameOver();
+                    Destroy(gameObject);
                     
                     // Show game over screen for player
                 }
