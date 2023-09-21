@@ -22,34 +22,31 @@ public class FireTrap : MonoBehaviour
 
     private void Update()
     {
-        if(playerHealth != null && active)
-        
+        if (active && playerHealth != null)
+        {
             playerHealth.TakeDamage(damage);
-        
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-
             playerHealth = collision.GetComponent<Health>();
 
-            if(!triggered)
+            if (!triggered)
             {
                 StartCoroutine(ActivateFireTrap());
             }
-            if (active)
-                collision.GetComponent<Health>().TakeDamage(damage);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == " Player")
-        
+        if (collision.CompareTag("Player"))
+        {
             playerHealth = null;
-        
+        }
     }
 
     private IEnumerator ActivateFireTrap()
@@ -58,12 +55,10 @@ public class FireTrap : MonoBehaviour
         spriteRend.color = Color.red;
         yield return new WaitForSeconds(activationDelay);
         spriteRend.color = Color.white;
-        active = true;
         anim.SetBool("activated", true);
         yield return new WaitForSeconds(activeTime);
+        anim.SetBool("activated", false);
         active = false;
         triggered = false;
-        anim.SetBool("activated", false);
     }
-
 }

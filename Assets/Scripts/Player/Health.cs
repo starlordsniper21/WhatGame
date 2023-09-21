@@ -70,6 +70,11 @@ public class Health : MonoBehaviour
                     GetComponent<MeleeEnemy>().enabled = false;
                     Destroy(gameObject);
                 }
+                else if (GetComponent<RangedEnemy>() != null)
+                {
+                    GetComponent<RangedEnemy>().enabled = false;
+                    Destroy(gameObject);
+                }
 
             }
             
