@@ -8,6 +8,7 @@ TagManager:
   - Jump
   - Traps
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 2928331829
+    locked: 0
+  - name: Wall
+    uniqueID: 2191218377
     locked: 0

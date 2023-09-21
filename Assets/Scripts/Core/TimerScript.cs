@@ -23,7 +23,7 @@ public class TimerScript : MonoBehaviour
             {
                 gameIsOver = true;
 
-                if (gameIsOver != null)
+                if(gameIsOver != null)
                 {
                     gameOverManager.gameOver();
                 }
