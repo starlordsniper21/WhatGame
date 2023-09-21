@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     private const int EnemyLayer = 11;
     private const int FlashWaitFactor = 2;
 
+    private bool invulnerable;
+
 
     private GameOverManager gameOverManager;
 
@@ -39,6 +41,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
+        if (invulnerable) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage,0,startingHealth);
 
         if (currentHealth > 0)
@@ -81,6 +84,7 @@ public class Health : MonoBehaviour
 
     private IEnumerator Invunerability()
     {
+        invulnerable = true;
         Physics2D.IgnoreLayerCollision(PlayerLayer, EnemyLayer, true);
         for (int i = 0; i < numberOfFlashes; i++)
         {
@@ -90,6 +94,7 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * FlashWaitFactor));
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
+        invulnerable = false;
     }
 
 
