@@ -78,10 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void Attack()
-    {
-        canAttack();
-    }
+    
 
     public void Jump()
     {
@@ -117,9 +114,6 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    public bool canAttack()
-    {
-        return horizontalInput == 0 && isGrounded() && !onWall();
-    }
+   
 
 }
