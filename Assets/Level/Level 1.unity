@@ -25457,30 +25457,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4503963294989400304, guid: 8a15edbb9ad36df40b7e77a25d1fe4e7, type: 3}
   m_PrefabInstance: {fileID: 4697514104903763736}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2077318849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077318839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ae60c3f1917a84baa88e01fcd2807a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 1
-  firePoint: {fileID: 183908171}
-  fireballs:
-  - {fileID: 2424883540021129822}
-  - {fileID: 8087202296205345113}
-  - {fileID: 3447356315266082243}
-  - {fileID: 7264433763784429752}
-  - {fileID: 3506076895301522942}
-  - {fileID: 6757883610359337964}
-  - {fileID: 5216120446692573497}
-  - {fileID: 5499158523949918837}
-  fireballSound: {fileID: 8300000, guid: 7c863c045c8e47842abec724be293de2, type: 3}
 --- !u!95 &2077318850
 Animator:
   serializedVersion: 5
@@ -29167,9 +29143,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4503963294989400304, guid: 8a15edbb9ad36df40b7e77a25d1fe4e7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2077318849}
-    - targetCorrespondingSourceObject: {fileID: 4503963294989400304, guid: 8a15edbb9ad36df40b7e77a25d1fe4e7, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2077318850}
   m_SourcePrefab: {fileID: 100100000, guid: 8a15edbb9ad36df40b7e77a25d1fe4e7, type: 3}
 --- !u!224 &4697514104903763737 stripped
@@ -29880,8 +29853,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1711956331953283346, guid: 6194115a73c75444cb4ba23192ed82f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711956331953283346, guid: 6194115a73c75444cb4ba23192ed82f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.11
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2445639476149524312, guid: 6194115a73c75444cb4ba23192ed82f9, type: 3}
       propertyPath: wallLayer.m_Bits
@@ -30011,8 +29988,7 @@ PrefabInstance:
       propertyPath: fireballs.Array.data[9]
       value: 
       objectReference: {fileID: 5499158523949918837}
-    m_RemovedComponents:
-    - {fileID: 7527583215121925802, guid: 6194115a73c75444cb4ba23192ed82f9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5685270554020128434, guid: 6194115a73c75444cb4ba23192ed82f9, type: 3}
     m_AddedGameObjects: []
