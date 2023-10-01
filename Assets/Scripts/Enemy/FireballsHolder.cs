@@ -8,7 +8,16 @@ public class Fireball : MonoBehaviour
 
     private void Update()
     {
-        transform.localScale = enemy.localScale;
+        // Check if the enemy reference is null before accessing it
+        if (enemy != null)
+        {
+            transform.localScale = enemy.localScale;
+        }
+        else
+        {
+            // Handle the case where the enemy has been destroyed or is null
+            // For example, you can destroy this Fireball object as well
+            Destroy(gameObject);
+        }
     }
-
 }
