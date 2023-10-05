@@ -5,11 +5,13 @@ using Dan.Main;
 
 public class LeaderBoard : MonoBehaviour
 {
+
+    public GameObject leaderBoardUi;
     [SerializeField] private List<TextMeshProUGUI> names;
     [SerializeField] private List<TextMeshProUGUI> scores;
 
     private string publicLeaderboardKey =
-        "d1d8c9096d97c0f69cdedb33622ac5bc3a34bf78fa3c6e34b9245bb002f52f1d";
+        "867667e9708e0f1639ffcf5bcf362b466b331edf22f49715b6e4189bd914343f";
 
     private void Start()
     {
@@ -36,5 +38,10 @@ public class LeaderBoard : MonoBehaviour
         {
             GetLeaderBoard();
         }));
+    }
+
+    public void leaderBoard()
+    {
+        leaderBoardUi.SetActive(true);
     }
 }

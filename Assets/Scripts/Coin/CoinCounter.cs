@@ -8,8 +8,7 @@ public class CoinCounter : MonoBehaviour
     public static CoinCounter Instance;
 
     public TMP_Text coinText;
-    public int currentCoin = 0;
-
+    public int currentCoin;
 
     private void Awake()
     {
@@ -18,13 +17,30 @@ public class CoinCounter : MonoBehaviour
 
     private void Start()
     {
-        coinText.text = "Score : " + currentCoin.ToString();
+        LoadSavedScore();
     }
 
     public void IncreaseCoin(int v)
     {
         currentCoin += v;
-        coinText.text = "Score : " + currentCoin.ToString();
+        UpdateCoinText();
+        SaveScore();
     }
 
+    public void UpdateCoinText()
+    {
+        coinText.text = currentCoin.ToString();
+    }
+
+    private void SaveScore()
+    {
+        PlayerPrefs.SetInt("PlayerScore", currentCoin);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadSavedScore()
+    {
+        currentCoin = PlayerPrefs.GetInt("PlayerScore", 0);
+        UpdateCoinText();
+    }
 }
