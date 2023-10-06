@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
+        CoinCounter.Instance.ResetScore();
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }
@@ -27,6 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        CoinCounter.Instance.ResetScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }

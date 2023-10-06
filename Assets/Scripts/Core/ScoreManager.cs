@@ -28,18 +28,16 @@ public class ScoreManager : MonoBehaviour
         }
 
         string playerName = inputName.text;
-        coinCounter.IncreaseCoin(score);
         submitScoreEvent.Invoke(playerName, score);
-        SaveScore();
     }
 
 
 
-    public void SaveScore()
-    {
-        int scoreToSave = coinCounter.currentCoin;
-        PlayerPrefs.SetInt("PlayerScore", scoreToSave);
-        PlayerPrefs.Save();
-        Debug.Log("Score saved: " + scoreToSave);
-    }
+    //public void SaveScore()
+    //{
+    //    int scoreToSave = coinCounter.currentCoin;
+    //    PlayerPrefs.SetInt("PlayerScore", scoreToSave);
+    //    PlayerPrefs.Save();
+    //    Debug.Log("Score saved: " + scoreToSave);
+    //}
 }
