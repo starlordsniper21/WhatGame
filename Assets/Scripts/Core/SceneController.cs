@@ -9,7 +9,7 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -28,7 +28,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(scenename);
     }
 
-
-
-
+    public void RestartGame()
+    {
+        CoinCounter.Instance.ResetScore(); // Reset the score before restarting
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

@@ -27,6 +27,13 @@ public class CoinCounter : MonoBehaviour
         SaveScore();
     }
 
+    public void ResetScore()
+    {
+        currentCoin = 0;
+        UpdateCoinText();
+        SaveScore();
+    }
+
     public void UpdateCoinText()
     {
         coinText.text = currentCoin.ToString();

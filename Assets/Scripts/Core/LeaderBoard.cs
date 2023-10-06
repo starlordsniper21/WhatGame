@@ -11,7 +11,7 @@ public class LeaderBoard : MonoBehaviour
     [SerializeField] private List<TextMeshProUGUI> scores;
 
     private string publicLeaderboardKey =
-        "867667e9708e0f1639ffcf5bcf362b466b331edf22f49715b6e4189bd914343f";
+        "a3058c541ab1143f4ef0edfb3707bb7b135c3eebbe9269d715fa14358434c1d4";
 
     private void Start()
     {
