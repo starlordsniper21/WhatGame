@@ -19,9 +19,9 @@ public class GameOverManager : MonoBehaviour
 
     public void restart()
     {
-        // Reset the score before restarting the game
         CoinCounter.Instance.ResetScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void toggleLeaderboard()

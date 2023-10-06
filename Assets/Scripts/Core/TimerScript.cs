@@ -19,7 +19,7 @@ public class TimerScript : MonoBehaviour
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
             int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-            if (minutes >= 1)
+            if (minutes >= 3)
             {
                 gameIsOver = true;
 
@@ -31,7 +31,7 @@ public class TimerScript : MonoBehaviour
             }
             else
             {
-                if (minutes == 00 && seconds == 50) 
+                if (minutes == 02 && seconds == 50) 
                 {
                     timerText.color = Color.red;
                 }

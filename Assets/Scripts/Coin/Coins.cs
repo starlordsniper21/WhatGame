@@ -18,7 +18,6 @@ public class Coins : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Coin collected with value: " + value);
         Destroy(gameObject);
         CoinCounter.Instance.IncreaseCoin(value);
     }
