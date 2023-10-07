@@ -2,26 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalController : MonoBehaviour
+public class TeleportController : MonoBehaviour
 {
-    public Transform destination;
-    GameObject player;
+    public Transform destination;  // The destination where the player should be teleported to.
 
-    private void Awake()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            if (Vector2.Distance(player.transform.position, transform.position) > 0.3f)
-            {
-                player.transform.position = destination.transform.position;
-            }
+            // Teleport the player to the destination.
+            other.transform.position = destination.position;
         }
-    } 
-
-
+    }
 }
