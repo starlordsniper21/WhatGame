@@ -6,6 +6,7 @@ Library: C:\Users\charlie\unity projects\WhatGame\Temp\BurstOutput\tempburstlibs
 --meta-data-generation=False
 --dump=Function
 --float-precision=Standard
+--target-framework=NetFramework
 --assembly-defines=UnityEngine;
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Unity.2D.IK.Runtime;
@@ -14,6 +15,7 @@ Library: C:\Users\charlie\unity projects\WhatGame\Temp\BurstOutput\tempburstlibs
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.2D.SpriteShape.Runtime;
 --assembly-defines=Unity.2D.PixelPerfect;
+--assembly-defines=Dan;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Profiling.Core;
 --assembly-defines=Unity.AdaptivePerformance.Samsung.Android;
@@ -57,7 +59,7 @@ Library: C:\Users\charlie\unity projects\WhatGame\Temp\BurstOutput\tempburstlibs
 --assembly-defines=mscorlib;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\charlie\unity projects\WhatGame\Temp\Burst
---key-folder=D:/UNITY/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=D:/UNITY/2022.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\charlie\unity projects\WhatGame\Library\Burst
 --output=C:\Users\charlie\unity projects\WhatGame\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
