@@ -10,22 +10,25 @@ EditorBuildSettings:
     guid: ab2b6d604df8d2f4085adb4629b10962
   - enabled: 1
     path: Assets/Level/Level 1.unity
-    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+    guid: b8e0b26ecd8f8514ea4b654518f01623
   - enabled: 1
     path: Assets/Level/Level 2.unity
     guid: bbf49ac7f3ffe42459d4f2f417f0a554
   - enabled: 1
     path: Assets/Level/Level 3.unity
-    guid: 6242ecafcaf580e42b3961b3f3d7cf59
+    guid: fdc713982384ad345a5c2a4764739e85
   - enabled: 1
     path: Assets/Level/Level 4.unity
     guid: 16fe5d22f0f56bf4e896e85dff9ed769
   - enabled: 1
     path: Assets/Level/Level 5.unity
-    guid: fdc713982384ad345a5c2a4764739e85
+    guid: 6242ecafcaf580e42b3961b3f3d7cf59
   - enabled: 1
     path: Assets/Level/Ending Scene.unity
     guid: ffe3b12afea6d04489203bf3da007d25
+  - enabled: 0
+    path: Assets/Level/Level X.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ee721d39d60b6c941ad3ec35e309ed49, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: d29443de278db6e4bb6ab35dbfb2d662, type: 2}
