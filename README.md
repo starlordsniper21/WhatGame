@@ -23,7 +23,7 @@ Follow these steps to get DogeDash up and running on your Android device. Whethe
 bash
 Copy code
 # Clone the repository
-git clone https://github.com/your-username/DogeDash.git
+git clone https://github.com/starlordsniper21/DogeDash.git
 
 # Open the project in Unity
 # Build and deploy to your Android device
